@@ -1,11 +1,18 @@
-// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "Untitled Node.js project",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-"remoteUser": "node",
-"features": {
-	"ghcr.io/devcontainers-extra/features/pnpm:2": {}
-}
+  "name": "SILO – Node 22 + pnpm",
+
+  "build": { "dockerfile": "Dockerfile" },
+
+  "remoteUser": "node",
+
+  // ←--- add this block
+  "containerEnv": {
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8"
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
+  }
 }
