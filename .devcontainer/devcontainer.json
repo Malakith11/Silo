@@ -2,17 +2,19 @@
   "name": "SILO – Node 22 + pnpm",
 
   "build": { "dockerfile": "Dockerfile" },
-
   "remoteUser": "node",
 
-  // ←--- add this block
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+
   "containerEnv": {
     "LANG": "C.UTF-8",
     "LC_ALL": "C.UTF-8"
   },
 
   "features": {
-    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
-    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
+    "ghcr.io/devcontainers/features/node:1":          { "version": "22" },
+    "ghcr.io/devcontainers-extra/features/pnpm:2":    {}
   }
 }
