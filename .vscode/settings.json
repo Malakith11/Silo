@@ -1,0 +1,31 @@
+{
+  // ── Dev-Container behaviour ─────────────────────────
+  //   "enabled"  → always reuse an existing stopped dev-container
+  //   "prompt"   → VS Code asks
+  //   "never"    → new container every time
+  "dev.containers.reuseDevContainer": "enabled",
+
+  // ── Deno helper settings for the Supabase Functions folder ──
+  "deno.enablePaths": ["supabase/functions"],
+  "deno.lint": true,
+  "deno.unstable": [
+    "bare-node-builtins",
+    "byonm",
+    "sloppy-imports",
+    "unsafe-proto",
+    "webgpu",
+    "broadcast-channel",
+    "worker-options",
+    "cron",
+    "kv",
+    "ffi",
+    "fs",
+    "http",
+    "net"
+  ],
+
+  // Use the Deno extension as the default formatter for TypeScript files
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  }
+}
