@@ -4,11 +4,15 @@
 
 up:
 	@echo "🚀 Spinning everything up…"
-	@./scripts/up.sh
+	@supabase start
+	@echo "📦 Installing web dependencies…"
+	@cd apps/web && pnpm install
+	@echo "🔥 Launching Next.js…"
+	@cd apps/web && pnpm dev
 
 down:
 	@echo "🛑 Shutting everything down…"
-	@./scripts/down.sh
+	@supabase stop
 
 	@echo "\n💾 Committing & pushing changes…"
 	@git add -A
