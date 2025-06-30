@@ -1,27 +1,18 @@
 {
   "name": "SILO – Node 22 + pnpm",
-
-  // Use the “base” image (has the 'vscode' user baked in)
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
-
-  // Install Node 22 & pnpm via features
+  "runArgs": [
+    "--network=host"
+  ],
   "features": {
     "ghcr.io/devcontainers/features/node:1": { "version": "22" },
     "ghcr.io/devcontainers-extra/features/pnpm:2": {}
   },
-
-  // VS Code will drop you in as this user
   "remoteUser": "vscode",
-
-  // Forward your app & DB ports
   "forwardPorts": [3000, 54321],
-
-  // Mount host Docker socket so `docker` works inside
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
-
-  // Keep locale sane
   "containerEnv": {
     "LANG": "C.UTF-8",
     "LC_ALL": "C.UTF-8"
