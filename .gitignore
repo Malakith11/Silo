@@ -1,16 +1,20 @@
-# PNPM store
-.pnpm-store/
+# PNPM artifacts
+.pnpm-store/               # move your store out of the repo entirely!
+.pnpm/                     # local PNPM cache
 
-# Vercel 
-.vercel
+# Node modules
+node_modules/
+**/node_modules/
 
-# Node deps
-.node_modules/
-*/.node_modules/
-
-
-.pnpm/
-
-# Next.js and Vercel builds
+# Next.js / Vercel builds
 .next/
 .vercel/
+
+# Dev files
+.env*
+*.log
+.DS_Store
+
+# Supabase temp
+.supabase/
+.supabase-temp/
