@@ -1,2 +1,16 @@
+# PNPM store
 .pnpm-store/
-.pnpm-store/
+
+# Vercel 
+.vercel
+
+# Node deps
+.node_modules/
+*/.node_modules/
+
+
+.pnpm/
+
+# Next.js and Vercel builds
+.next/
+.vercel/
