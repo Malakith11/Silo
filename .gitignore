@@ -26,3 +26,20 @@ apps/web/node_modules/
 .vercel
 /apps/web/public/Background Videos/
 /apps/web/public/Background Videos/
+
+# local package stores & build output
+node_modules/
+.pnpm-store/
+pnpm-store/
+.pnpm/
+.pnpm-store/
+pnpm-store/
+
+# Next.js / Vercel
+apps/web/.next/
+apps/web/.vercel/
+apps/web/node_modules/
+apps/web/.pnpm-store/
+
+# remove stray mirror folder
+Silo.git/
