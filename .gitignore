@@ -38,3 +38,4 @@ pnpm-workspace.yaml
 pnpm-lock.yaml
 # (keep these tracked, but you can ignore any stray caches)
 .pnpm-store/
+.vercel
