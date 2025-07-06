@@ -8,7 +8,8 @@ node_modules/
 apps/web/node_modules/
 
 # don’t commit giant videos
-apps/web/public/Background Videos/*.mp4
+# ignore all mp4s in “Background Videos” folder
+apps/web/public/Background\ Videos/*.mp4
 
 # Next.js / Vercel builds
 .next/

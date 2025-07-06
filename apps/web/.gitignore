@@ -10,6 +10,8 @@
 !.yarn/releases
 !.yarn/versions
 
+/public/Background\ Videos/*.mp4
+
 # testing
 /coverage
 
