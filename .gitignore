@@ -24,3 +24,4 @@ apps/web/node_modules/
 .supabase/
 .supabase-temp/
 .vercel
+/apps/web/public/Background Videos/
