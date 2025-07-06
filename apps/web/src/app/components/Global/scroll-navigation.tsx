@@ -24,8 +24,8 @@ export function ScrollNavigation() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { shouldAnimate } = useMotion()
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>()
-  const observerRef = useRef<IntersectionObserver>()
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const observerRef      = useRef<IntersectionObserver  | null>(null)
 
   // Handle scroll visibility and progress
   useEffect(() => {
