@@ -19,7 +19,7 @@ const fadeUp = {
 export function Statistics() {
   return (
     <motion.div
-      className="flex flex-col items-start w-full pl-6 sm:pl-12 md:pl-20 lg:pl-32 pr-6 sm:pr-12 md:pr-20 lg:pr-32 mb-2"
+      className="flex flex-col items-start w-full pl-6 sm:pl-12 md:pl-20 lg:pl-32 pr-6 sm:pr-12 md:pr-20 lg:pr-32 mb-28"
       variants={{
         hidden: {},
         show: {
@@ -32,43 +32,34 @@ export function Statistics() {
       animate="show"
     >
       <motion.div variants={fadeUp}>
-        <ScrollReveal>
-          <Badge
-            variant="outline"
-            className="inline-flex items-center gap-2 px-4 py-2 text-base sm:text-lg font-semibold bg-white text-black border-white mb-2"
-          >
-            <FlaskConical className="w-5 h-5 text-black" />
-            BERT-Lm Powered
-          </Badge>
-        </ScrollReveal>
       </motion.div>
       <motion.div variants={fadeUp}>
         <ScrollReveal>
           <div className="space-y-2 text-left font-medium drop-shadow-lg w-full max-w-full">
             <div className="flex items-center gap-4">
-              <span className="font-extrabold text-blue-400 text-3xl sm:text-5xl md:text-6xl lg:text-7xl w-32 text-right">
+              <span className="font-extrabold text-blue-400 text-2xl sm:text-3xl md:text-4xl lg:text-6xl w-32 text-right">
                 52,847
               </span>
-              <span className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-white whitespace-nowrap pl-4">
+              <span className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-white whitespace-nowrap pl-24">
                 Research Studies
               </span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="font-extrabold text-blue-400 text-3xl sm:text-5xl md:text-6xl lg:text-7xl w-32 text-right">
+              <span className="font-extrabold text-blue-400 text-2xl sm:text-3xl md:text-4xl lg:text-6xl w-32 text-right">
                 12,847
               </span>
-              <span className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-white whitespace-nowrap pl-4">
+              <span className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-white whitespace-nowrap pl-24">
                 Supplement Products
               </span>
             </div>
             <div className="flex items-center gap-4">
               <span
-                className="font-extrabold text-blue-400 text-3xl sm:text-5xl md:text-6xl lg:text-7xl w-32 text-right"
+                className="font-extrabold text-blue-400 text-2xl sm:text-3xl md:text-4xl lg:text-6xl w-32 text-right"
                 aria-label="1,200 plus"
               >
                 1,200+
               </span>
-              <span className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-white whitespace-nowrap pl-4">
+              <span className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-white whitespace-nowrap pl-24">
                 Brands Tracked
               </span>
             </div>

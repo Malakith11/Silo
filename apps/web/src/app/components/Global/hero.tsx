@@ -1,52 +1,12 @@
 "use client"
 import { useState, useEffect, useRef } from "react"
-import { Button } from "../ui/button"
-import { Brain, ArrowRight } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { HeroContent } from "../Global/hero-content"
 import { Statistics } from "../Global/statistics"
 
-function SecondaryHeroPanel() {
-  const secondaryMain = "Escape the marketing maze.\nYour Health, Your terms. Take Ownership."
-  const secondarySubtitle =
-    "Confidently choose supplements grounded in rigorous scientific evidence. Our platform cuts through the noise, delivering unbiased, research-backed insights to help you optimize your health entirely on your terms."
-
-  return (
-    <div className="space-y-4 w-full">
-      <div className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight whitespace-pre-line">
-        {secondaryMain}
-      </div>
-      <div className="block text-sm sm:text-base md:text-lg text-white/90 mt-2">{secondarySubtitle}</div>
-      <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full justify-end">
-        <Button
-          size="lg"
-          className="group px-6 md:px-8 py-4 text-lg md:text-xl transition-all duration-200"
-          onClick={() => (window.location.href = "/stack-lab/ai-suggest")}
-        >
-          <Brain className="w-7 md:w-9 h-7 md:h-9 mr-3 group-hover:scale-125 transition-transform" />
-          <span className="hidden sm:inline">Build My Protocol</span>
-          <span className="sm:hidden">Build Protocol</span>
-          <ArrowRight className="w-5 md:w-6 h-5 md:h-6 ml-2 group-hover:translate-x-2 transition-transform" />
-        </Button>
-        <Button
-          size="lg"
-          className="group px-6 md:px-8 py-4 text-lg md:text-xl transition-all duration-300"
-          variant="outline"
-          onClick={() => (window.location.href = "/join")}
-        >
-          Join Silo
-          <ArrowRight className="w-5 md:w-6 h-5 md:h-6 ml-2 group-hover:translate-x-2 transition-transform" />
-        </Button>
-      </div>
-    </div>
-  )
-}
-
 export function Hero({
-  setStuck,
   onAnimationComplete,
 }: {
-  setStuck: (stuck: boolean) => void
   onAnimationComplete?: () => void
 }) {
   const [showProgress, setShowProgress] = useState(false)
@@ -69,7 +29,6 @@ export function Hero({
     const handleScroll = () => {
       const scrollTop = window.scrollY
       setShowProgress(scrollTop > 0)
-      setStuck(scrollTop > window.innerHeight)
 
       const docHeight = document.body.scrollHeight - window.innerHeight
       setProgress(docHeight > 0 ? scrollTop / docHeight : 0)
@@ -79,7 +38,7 @@ export function Hero({
       window.removeEventListener("scroll", handleScroll)
       document.documentElement.style.scrollBehavior = "auto"
     }
-  }, [setStuck])
+  },)
 
   return (
     <section
@@ -136,9 +95,7 @@ export function Hero({
           bottom: "15%",
           right: 0,
         }}
-      >
-        <SecondaryHeroPanel />
-      </motion.div>
+      >      </motion.div>
     </section>
   )
 }
