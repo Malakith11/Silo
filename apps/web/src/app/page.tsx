@@ -1,6 +1,5 @@
 "use client"
 
-import { Analytics } from "@vercel/analytics/next"
 import { Header } from "./components/Global/header"
 import { Hero } from "./components/Global/hero"
 import { SiloCoreFeatures } from "./components/Global/silo-core-features"
