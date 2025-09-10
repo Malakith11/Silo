@@ -1,5 +1,8 @@
 "use client"
 import { motion, easeOut } from "framer-motion"
+import { useRouter } from "next/navigation"
+import { useUser } from "@clerk/nextjs"
+import { Button } from "../ui/button"
 import { ScrollReveal } from "./ScrollReveal"
 
 const fadeUp = {
@@ -15,6 +18,9 @@ const fadeUp = {
 }
 
 export function HeroContent() {
+  const router = useRouter()
+  const { isSignedIn } = useUser()
+
   return (
     <motion.div
       className="flex flex-col items-start w-full pl-4 sm:pl-6 md:pl-8 lg:pl-16 max-w-full sm:max-w-2xl mt-0"
@@ -44,6 +50,15 @@ export function HeroContent() {
             drag‑and‑drop simplicity.
           </p>
         </ScrollReveal>
+      </motion.div>
+      <motion.div variants={fadeUp} className="mt-8">
+        <Button
+          size="lg"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
+          onClick={() => router.push(isSignedIn ? "/dashboard" : "/sign-up")}
+        >
+          {isSignedIn ? "Go to Dashboard" : "Start Building Your Protocol"}
+        </Button>
       </motion.div>
     </motion.div>
   )

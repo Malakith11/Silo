@@ -1,8 +1,10 @@
 "use client"
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
+import { useUser } from "@clerk/nextjs"
 import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
+import { UserButton } from "../auth/user-button"
 import { Menu, X, Compass, Beaker, Eye, Shield, HelpCircle, ChevronDown } from "lucide-react"
 
 const NAVIGATION_ITEMS = [
@@ -79,6 +81,7 @@ export function Header({ show = true, className }: { show?: boolean; className?:
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const router = useRouter()
   const headerRef = useRef<HTMLElement>(null)
+  const { isSignedIn } = useUser()
 
   useEffect(() => {
     let lastScrollY = window.scrollY
@@ -374,24 +377,30 @@ export function Header({ show = true, className }: { show?: boolean; className?:
 
         {/* Right: Actions */}
         <div className="flex items-center gap-2 pr-4 md:pr-8 lg:pr-16 min-w-[200px] justify-end">
-          <Button
-            variant="ghost"
-            size="sm"
-            className={`text-sm font-medium bg-transparent relative group transition-all duration-700 ease-in-out ${styles.textColor} ${styles.hoverColor}`}
-            onClick={() => router.push("/dashboard")}
-          >
-            Sign In
-            <div
-              className={`absolute bottom-0 left-1/2 h-0.5 rounded-full transition-all duration-300 ease-out group-hover:w-3/4 group-hover:-translate-x-1/2 w-0 -translate-x-1/2 ${styles.underlineColor}`}
-            />
-          </Button>
-          <Button
-            size="sm"
-            className="bg-black text-white hover:bg-neutral-900 font-semibold px-5 py-2 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
-            onClick={() => router.push("/onboarding")}
-          >
-            Join Silo
-          </Button>
+          {isSignedIn ? (
+            <UserButton />
+          ) : (
+            <>
+              <Button
+                variant="ghost"
+                size="sm"
+                className={`text-sm font-medium bg-transparent relative group transition-all duration-700 ease-in-out ${styles.textColor} ${styles.hoverColor}`}
+                onClick={() => router.push("/sign-in")}
+              >
+                Sign In
+                <div
+                  className={`absolute bottom-0 left-1/2 h-0.5 rounded-full transition-all duration-300 ease-out group-hover:w-3/4 group-hover:-translate-x-1/2 w-0 -translate-x-1/2 ${styles.underlineColor}`}
+                />
+              </Button>
+              <Button
+                size="sm"
+                className="bg-black text-white hover:bg-neutral-900 font-semibold px-5 py-2 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                onClick={() => router.push("/sign-up")}
+              >
+                Join Silo
+              </Button>
+            </>
+          )}
         </div>
       </div>
 
