@@ -1,3 +1,6 @@
 packages:
-  - "apps/*"
-  - "supabase"
+  - apps/*
+  - supabase
+
+onlyBuiltDependencies:
+  - '@clerk/shared'
