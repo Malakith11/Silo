@@ -50,17 +50,12 @@ export function Hero({
         style={{ y: backgroundY }}
         transition={{ type: "spring", stiffness: 100, damping: 30, duration: 0.8 }}
       >
-        <video
-          className="w-full h-full object-cover"
-          src="/General Images/Silo-Bg-Main.avif"
-          autoPlay
-          loop
-          muted
-          playsInline
-          onCanPlay={(e) => (e.currentTarget.playbackRate = 0.7)}
+        <div
+          className="w-full h-full bg-cover bg-center bg-no-repeat bg-gray-900"
+          style={{ backgroundImage: "url('/hero-bg.jpg')" }}
         />
         <motion.div
-          className="absolute inset-0 bg-black/40"
+          className="absolute inset-0 bg-black/20"
           style={{ opacity }}
           transition={{ type: "spring", stiffness: 100, damping: 30, duration: 0.8 }}
         />
