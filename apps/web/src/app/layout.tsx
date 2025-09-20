@@ -3,8 +3,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
 import "./globals.css"
-import { ThemeProvider } from "./components/Global/theme-provider"
-import { MotionProvider } from "./components/Global/motion-provider"
+import { ThemeProvider } from "@/components/shared/theme-provider"
+import { MotionProvider } from "@/components/shared/motion-provider"
 
 
 const inter = Inter({ subsets: ["latin"] })

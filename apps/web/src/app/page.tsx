@@ -1,9 +1,9 @@
 "use client"
 
-import { Header } from "./components/Global/header"
-import { Hero } from "./components/Global/hero"
-import { SiloCoreFeatures } from "./components/Global/silo-core-features"
-import { ScrollNavigation } from "./components/Global/scroll-navigation"
+import { Header } from "@/components/shared/header"
+import { Hero } from "@/components/shared/hero"
+import { SiloCoreFeatures } from "@/components/shared/silo-core-features"
+import { ScrollNavigation } from "@/components/shared/scroll-navigation"
 
 export default function ClientLanding() {
   return (
