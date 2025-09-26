@@ -1,15 +1,16 @@
 {
-  "name": "SILO – Node 22 + pnpm",
+  "name": "Silo_Dev_Container",
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
   "runArgs": [
-    "--network=host"
+    "--network=host",
+    "--name=Silo_Dev_Container"
   ],
   "features": {
     "ghcr.io/devcontainers/features/node:1": { "version": "22" },
     "ghcr.io/devcontainers-extra/features/pnpm:2": {}
   },
   "remoteUser": "vscode",
-  "forwardPorts": [3000, 54321],
+  "forwardPorts": [3000, 5432, 8000, 3001, 3002, 4000],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
@@ -19,12 +20,5 @@
   },
 
   // After the container is built, install Docker CLI & Supabase CLI manually:
-  "postCreateCommand": "bash -lc \"\
-sudo apt-get update && \
-sudo apt-get install -y docker.io curl tar && \
-rm -rf supabase && \
-curl -sL https://github.com/supabase/cli/releases/latest/download/supabase_linux_amd64.tar.gz | tar -xz supabase && \
-sudo install -m755 supabase /usr/local/bin && \
-rm -f supabase\
-\""
+  "postCreateCommand": "bash -lc \"sudo apt-get update && sudo apt-get install -y docker.io curl tar && curl -sL https://github.com/supabase/cli/releases/latest/download/supabase_linux_amd64.tar.gz | tar -xz supabase && sudo install -m755 supabase /usr/local/bin && rm -f supabase && curl -fsSL https://storage.googleapis.com/claude-code-public/install.sh | bash\""
 }

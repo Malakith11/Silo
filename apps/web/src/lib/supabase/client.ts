@@ -20,6 +20,61 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 export type Database = {
   public: {
     Tables: {
+      users: {
+        Row: {
+          id: string
+          clerk_user_id: string
+          email: string
+          first_name: string | null
+          last_name: string | null
+          profile_image_url: string | null
+          username: string | null
+          phone_number: string | null
+          email_verified: boolean
+          phone_verified: boolean
+          banned: boolean
+          locked: boolean
+          created_at: string
+          updated_at: string
+          last_sign_in_at: string | null
+          last_active_at: string | null
+        }
+        Insert: {
+          id?: string
+          clerk_user_id: string
+          email: string
+          first_name?: string | null
+          last_name?: string | null
+          profile_image_url?: string | null
+          username?: string | null
+          phone_number?: string | null
+          email_verified?: boolean
+          phone_verified?: boolean
+          banned?: boolean
+          locked?: boolean
+          created_at?: string
+          updated_at?: string
+          last_sign_in_at?: string | null
+          last_active_at?: string | null
+        }
+        Update: {
+          id?: string
+          clerk_user_id?: string
+          email?: string
+          first_name?: string | null
+          last_name?: string | null
+          profile_image_url?: string | null
+          username?: string | null
+          phone_number?: string | null
+          email_verified?: boolean
+          phone_verified?: boolean
+          banned?: boolean
+          locked?: boolean
+          updated_at?: string
+          last_sign_in_at?: string | null
+          last_active_at?: string | null
+        }
+      }
       supplements: {
         Row: {
           id: string
