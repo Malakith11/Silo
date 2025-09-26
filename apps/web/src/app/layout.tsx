@@ -8,6 +8,7 @@ import { MotionProvider } from "@/components/shared/motion-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
   title: "Silo - Evidence-Based Supplement Protocols",
   description:
     "Transform your health goals into personalized supplement protocols backed by clinical research, biomarker tracking, and expert curation.",
