@@ -5,7 +5,7 @@ import { Button } from "../ui/button"
 import { Target, Brain, FlaskConical, TrendingUp, ArrowRight, Sparkles, CheckCircle } from "lucide-react"
 import { useState, useEffect } from "react"
 import { useInView } from "react-intersection-observer"
-import { useMotion } from "../Global/motion-provider"
+import { useMotion } from "./motion-provider"
 
 // Typing Animation Component
 type TypedTextProps = {

@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Header } from "../Global/header"
-import { Footer } from "../Global/footer"
+import { Header } from "./header"
+import { Footer } from "./footer"
 import { Button } from "../ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"

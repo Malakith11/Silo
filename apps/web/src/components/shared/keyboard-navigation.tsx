@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import type React from "react"
 
-import { useMotion } from "../Global/motion-provider"
+import { useMotion } from "./motion-provider"
 
 export function KeyboardNavigationProvider({ children }: { children: React.ReactNode }) {
   const [isKeyboardUser, setIsKeyboardUser] = useState(false)

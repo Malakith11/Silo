@@ -1,6 +1,6 @@
 import { Check } from "lucide-react"
 
-import { cn } from "../../../../lib/utils"
+import { cn } from "../../lib/utils"
 import { buttonVariants } from "../ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card"
 

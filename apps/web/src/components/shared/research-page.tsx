@@ -1,8 +1,8 @@
 "use client"
 
 import { JSX, SVGProps, useState } from "react"
-import { Header } from "../Global/header"
-import { Footer } from "../Global/footer"
+import { Header } from "./header"
+import { Footer } from "./footer"
 import { Button } from "../ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
@@ -37,7 +37,7 @@ import {
 } from "lucide-react"
 import { Progress } from "../ui/progress"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip"
-import { IntelligencePipeline } from "../Global/intelligence-pipeline"
+import { IntelligencePipeline } from "./intelligence-pipeline"
 
 // Study outcome types
 type OutcomeType = "positive" | "negative" | "neutral" | "mixed"

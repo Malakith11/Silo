@@ -2,7 +2,7 @@
 import { Button } from "../ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu"
 import { Zap, ZapOff, Check, Settings } from "lucide-react"
-import { useMotion } from "../Global/motion-provider"
+import { useMotion } from "./motion-provider"
 
 export function MotionToggle() {
   const { shouldAnimate, setShouldAnimate, isSystemReduced } = useMotion()

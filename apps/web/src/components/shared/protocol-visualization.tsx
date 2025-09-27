@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { Target, Beaker, Brain, Activity, LineChart, Zap, Heart, Moon, Dna } from "lucide-react"
 import { useInView } from "react-intersection-observer"
-import { useMotion } from "../Global/motion-provider"
+import { useMotion } from "./motion-provider"
 
 // Protocol type definitions with their unique visual properties
 const PROTOCOL_TYPES = {

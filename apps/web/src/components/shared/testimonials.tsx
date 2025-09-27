@@ -3,7 +3,7 @@ import { Card, CardContent } from "../ui/card"
 import { Badge } from "../ui/badge"
 import { Star, TrendingUp, Users, Award, Target } from "lucide-react"
 import { useInView } from "react-intersection-observer"
-import { useMotion } from "../Global/motion-provider"
+import { useMotion } from "./motion-provider"
 import { useState, useEffect } from "react"
 
 // Typing Animation Component

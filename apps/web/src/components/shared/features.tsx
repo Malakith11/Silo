@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { ArrowRight, BarChart3 } from "lucide-react"
 import { useInView } from "react-intersection-observer"
-import { useMotion } from "../Global/motion-provider"
+import { useMotion } from "./motion-provider"
 import { motion } from "framer-motion"
 
 // Pastel matte color set (darker)

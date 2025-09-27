@@ -18,7 +18,7 @@ import {
 import { Checkbox } from "../ui/checkbox"
 import { Search, ChevronDown, ChevronUp, X, Package, Target, Bell, Bookmark, BarChart3, Zap } from "lucide-react"
 import { useInView } from "react-intersection-observer"
-import { useMotion } from "../Global/motion-provider"
+import { useMotion } from "./motion-provider"
 import { motion } from "framer-motion"
 
 // Typing Animation Component

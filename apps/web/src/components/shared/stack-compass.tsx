@@ -20,7 +20,7 @@ import {
   Users,
   X,
 } from "lucide-react"
-import { cn } from "../../../../lib/utils"
+import { cn } from "../../lib/utils"
 import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"

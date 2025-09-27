@@ -1,7 +1,7 @@
 "use client"
-import { Header } from "../Global/header"
-import { Footer } from "../Global/footer"
-import { StackCompass } from "../Global/stack-compass"
+import { Header } from "./header"
+import { Footer } from "./footer"
+import { StackCompass } from "./stack-compass"
 
 export function StackCompassPage() {
   return (

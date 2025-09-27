@@ -10,11 +10,11 @@ const isPublic = createRouteMatcher([
   "/api/webhooks/(.*)",
 ]);
 
-export default clerkMiddleware((auth, req) => {
+export default clerkMiddleware(async (auth, req) => {
   if (isPublic(req)) return;
 
-  // Works across Clerk 6.x without .protect()
-  const { userId, redirectToSignIn } = auth();
+  // auth() returns a Promise resolving to an object containing userId and redirectToSignIn
+  const { userId, redirectToSignIn } = await auth();
   if (!userId) {
     return redirectToSignIn({ returnBackUrl: req.url });
   }

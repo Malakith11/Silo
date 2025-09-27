@@ -22,8 +22,8 @@ import {
   Calendar,
   Globe,
 } from "lucide-react"
-import { ThemeToggle } from "../Global/theme-toggle"
-import { SupplementSearchHub } from "../Global/supplement-search-hub"
+import { ThemeToggle } from "./theme-toggle"
+import { SupplementSearchHub } from "./supplement-search-hub"
 
 export function DatabasePage() {
   const [activeTab, setActiveTab] = useState("search")

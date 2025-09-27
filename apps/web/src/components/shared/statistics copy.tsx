@@ -1,6 +1,6 @@
 "use client"
 import { motion, easeOut } from "framer-motion"
-import { ScrollReveal } from "../Global/ScrollReveal"
+import { ScrollReveal } from "./ScrollReveal"
 import { Badge } from "../ui/badge"
 import { FlaskConical } from "lucide-react"
 
