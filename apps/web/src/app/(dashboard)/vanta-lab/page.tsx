@@ -1,7 +1,7 @@
 import { StackBuilder } from '@/components/vanta-lab/stack-builder'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Plus, Template, Zap } from 'lucide-react'
+import { LayoutTemplate, Plus, Zap } from 'lucide-react'
 
 export default function VantaLabPage() {
   return (
@@ -32,7 +32,7 @@ export default function VantaLabPage() {
         <Card className="cursor-pointer hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Template className="h-5 w-5" />
+              <LayoutTemplate className="h-5 w-5" />
               Use Template
             </CardTitle>
           </CardHeader>
