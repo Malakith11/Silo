@@ -42,3 +42,13 @@ pnpm-lock.yaml
 
 # Stack Scripts
 scripts/
+
+# Agent and Context Files 
+.agents/
+agents/
+
+# To Do Lists
+daily-to-do.md
+# Setup Guides 
+dev-env-to-do.md
+
