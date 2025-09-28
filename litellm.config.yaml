@@ -1,0 +1,16 @@
+model_list:
+  - model_name: gpt-4o
+    litellm_params: { model: openai/gpt-4o }
+  - model_name: gpt-4o-mini
+    litellm_params: { model: openai/gpt-4o-mini }
+
+router:
+  strategy: weighted_pick
+  timeout: 60
+
+fallbacks:
+  gpt-4o: [gpt-4o-mini]
+  gpt-4o-mini: []
+
+general_settings:
+  disable_logs: true

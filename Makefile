@@ -1,36 +1,26 @@
-# Makefile
+# Location: /workspaces/silo/Makefile
 
-.PHONY: up down
+SHELL := /bin/bash
+APP_PORT ?= 3000
+LITELLM_PORT ?= 4100
 
 up:
-	@echo "🚀 Spinning everything up…"
-	@supabase start
-	@echo "📦 Installing web dependencies…"
-	@cd apps/web && pnpm install
-	@echo "🔥 Launching Next.js…"
-	@cd apps/web && pnpm dev
+	@echo "Starting SILO dev environment..."
+	@APP_PORT=$(APP_PORT) LITELLM_PORT=$(LITELLM_PORT) ./scripts/dev-up.sh
 
 down:
-	@echo "🛑 Stopping Supabase…"
-	@supabase stop
+	@echo "Stopping SILO dev environment..."
+	@./scripts/dev-down.sh
 
-	@# ask about git commit/push
-	@read -p "❓ Commit & push local changes? [y/N] " ans; \
-	if echo "$$ans" | grep -iq "^y$$"; then \
-	  read -p "✏️  Commit message: " msg; \
-	  git add .; \
-	  git commit -m "$$msg"; \
-	  git push origin main; \
-	else \
-	  echo "↩️  Skipping git commit/push"; \
-	fi
+status:
+	@echo "Node: $$(node -v 2>/dev/null || echo missing)  PNPM: $$(pnpm -v 2>/dev/null || echo missing)"
+	@echo "Playwright: $$(npx playwright --version 2>/dev/null || echo missing)"
+	@echo "Supabase: $$(supabase --version 2>/dev/null || echo missing)"
+	@echo "Docker: $$(docker --version 2>/dev/null || echo missing)"
+	@echo "OpenAI key set? $${OPENAI_API_KEY:+yes}${OPENAI_API_KEY:+' '}"
+	@echo "LITELLM_PORT=$(LITELLM_PORT)  APP_PORT=$(APP_PORT)"
+	@echo "Agents manifests: $$(ls agents/manifests/*.json 2>/dev/null | wc -l) found"
+	@echo "Contexts root: agents/contexts"
 
-	@# ask about Vercel deploy
-	@read -p "❓ Deploy to Vercel? [y/N] " ans2; \
-	if echo "$$ans2" | grep -iq "^y$$"; then \
-	  pnpm dlx vercel --prod; \
-	else \
-	  echo "↩️  Skipping Vercel deploy"; \
-	fi
-
-	@echo "👍 Done."
+e2e:
+	pnpm exec playwright test

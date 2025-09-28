@@ -4,7 +4,12 @@
       "Bash(cd:*)",
       "Bash(tree:*)",
       "Bash(npm run build:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(npx playwright:*)",
+      "mcp__playwright__browser_navigate",
+      "Read(//home/vscode/**)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

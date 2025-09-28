@@ -9,9 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
-  title: "Silo - Evidence-Based Supplement Protocols",
+  title: "Silo",
   description:
-    "Transform your health goals into personalized supplement protocols backed by clinical research, biomarker tracking, and expert curation.",
+    "Silo Supplement Intelligence Platform.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

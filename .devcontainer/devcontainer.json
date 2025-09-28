@@ -1,24 +1,51 @@
 {
-  "name": "Silo_Dev_Container",
-  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "name": "Silo_dev",
+  "build": { "dockerfile": "Dockerfile" },
+  "remoteUser": "node",
+  "workspaceFolder": "/workspaces/silo",
   "runArgs": [
-    "--network=host",
-    "--name=Silo_Dev_Container"
+    "--name=Silo_Dev_Container",
+    "--hostname=silo-dev",
+    "--label=devcontainer.name=Silo_Dev_Container",
+    "--label=project=silo",
+    "--add-host=host.docker.internal:host-gateway"
   ],
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
-    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
-  },
-  "remoteUser": "vscode",
-  "forwardPorts": [3000, 5432, 8000, 3001, 3002, 4000],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
-  "containerEnv": {
+    "containerEnv": {
     "LANG": "C.UTF-8",
     "LC_ALL": "C.UTF-8"
   },
 
-  // After the container is built, install Docker CLI & Supabase CLI manually:
-  "postCreateCommand": "bash -lc \"sudo apt-get update && sudo apt-get install -y docker.io curl tar && curl -sL https://github.com/supabase/cli/releases/latest/download/supabase_linux_amd64.tar.gz | tar -xz supabase && sudo install -m755 supabase /usr/local/bin && rm -f supabase && curl -fsSL https://storage.googleapis.com/claude-code-public/install.sh | bash\""
+  "postStartCommand": "bash -lc 'gid=$(stat -c %g /var/run/docker.sock); sudo groupadd -for -g $gid docker && sudo usermod -aG docker node'"
+  ,
+  
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "ms-playwright.playwright",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  
+  "postCreateCommand": "bash -lc ' \
+    (command -v corepack >/dev/null 2>&1 && corepack enable || true); \
+    if ! command -v pnpm >/dev/null 2>&1; then npm i -g pnpm; fi; \
+    pnpm install --frozen-lockfile || true; \
+    npx playwright install chrome; \
+    python3 -m pip show litellm || true; \
+    supabase --version || true \
+'",
+  "portsAttributes": {
+    "3000": { "label": "Web" },
+    "4100": { "label": "LiteLLM Proxy" }
+},
+"forwardPorts": [3000, 4100, 5432, 8000, 3001, 3002]
 }
