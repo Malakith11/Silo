@@ -1,0 +1,13 @@
+{
+  "name": "Backend Agent",
+  "primary_context": "agents/contexts/GLOBALS.md",
+  "required_globals": ["agents/contexts/GLOBALS.md"],
+  "tools": ["filesystem"],
+  "change_checklist": [
+    "Zod validation for inputs",
+    "Auth checks (role/RLS assumptions)",
+    "Unit tests for handlers",
+    "Error taxonomy + logging"
+  ],
+  "denylist": ["Client-side secret usage", "Unaudited schema changes"]
+}

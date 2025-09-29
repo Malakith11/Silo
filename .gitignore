@@ -1,54 +1,48 @@
-# ─── PNPM artifacts ─────────────────────────────────────────────────────────────
-.pnpm-store/
-.pnpm/
-
-pnpm-store/
-pnpm-store-lock.yaml
-
-# ─── Node / JavaScript modules ─────────────────────────────────────────────────
+# Dependency directories
 node_modules/
-**/node_modules/
+.pnpm-store/
 
-# ─── Next.js & Vercel build outputs ─────────────────────────────────────────────
-.next/
-.out/
-.vercel/
-apps/web/.next/
-apps/web/.vercel/
-
-# ─── Environment & debug files ──────────────────────────────────────────────────
-.env*
+# Logs
+logs
 *.log
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.local.example
+!.env.*.example
+
+# vercel
+.vercel/ 
+
+# Next.js / build outputs
+.next/
+out/
+dist/
+build/
+.turbo/
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing artifacts
+coverage/
+.playwright/
+cypress/screenshots/
+cypress/videos/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
 .DS_Store
 
-# ─── Supabase temp & CLI artifacts ──────────────────────────────────────────────
-.supabase/
-.supabase-temp/
-
-# ─── Giant assets ───────────────────────────────────────────────────────────────
-# ignore the entire “Background Videos” folder (space escaped)
-apps/web/public/Background\ Videos/
-
-# ─── Optional: Lockfiles & caches ────────────────────────────────────────────────
-pnpm-workspace.yaml
-pnpm-lock.yaml
-# (keep these tracked, but you can ignore any stray caches)
-.pnpm-store/
-.vercel
-
-# Stack Scripts
-scripts/
-
-# Agent and Context Files 
-.agents/
-agents/
-
-# To Do Lists
-daily-to-do.md
-# Setup Guides 
-dev-env-to-do.md
-
+# Misc
+Thumbs.db

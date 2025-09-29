@@ -1,0 +1,29 @@
+{
+  "name": "Test Agent",
+  "purpose": "Ensure unit, integration, and Playwright e2e coverage and stability.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md",
+    "agents/contexts/GLOBAL_SPEC.md"
+  ],
+  "primary_context": "agents/contexts/tests/TEST_AGENT.md",
+  "additional_context": [
+    "agents/contexts/tests/unit.md",
+    "agents/contexts/tests/integration.md",
+    "agents/contexts/tests/e2e.md"
+  ],
+  "tools": [
+    "filesystem",
+    "playwright"
+  ],
+  "change_checklist": [
+    "Cover happy path + main failure modes",
+    "Use stable selectors and deterministic data",
+    "No network flakiness; retry where needed",
+    "Snapshots updated intentionally (with reason)"
+  ],
+  "denylist": [
+    "Tight coupling to implementation details",
+    "Flaky time-based heuristics without waits",
+    "Hard-coded environment secrets in tests"
+  ]
+}

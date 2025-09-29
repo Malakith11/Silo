@@ -1,0 +1,13 @@
+{
+  "name": "Data Agent",
+  "primary_context": "agents/contexts/GLOBALS.md",
+  "required_globals": ["agents/contexts/GLOBALS.md"],
+  "tools": ["filesystem"],
+  "change_checklist": [
+    "Write migration w/ backfill plan",
+    "Add types & fixtures",
+    "Update tests & docs",
+    "Check RLS and indexes"
+  ],
+  "denylist": ["Dropping columns without contract plan", "RLS weakening"]
+}

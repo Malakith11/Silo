@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@silo/ui": ["packages/ui/src"],
+      "@silo/ui/*": ["packages/ui/src/*"],
+      "@silo/core": ["packages/core/src"],
+      "@silo/core/*": ["packages/core/src/*"],
+      "@/*": [
+        "apps/landing/src/*",
+        "apps/platform/src/*",
+        "apps/web/src/*"
+      ]
+    }
+  },
+  "include": ["packages", "apps"]
+}

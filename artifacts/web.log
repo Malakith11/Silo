@@ -1,0 +1,76 @@
+
+> @silo/platform@0.1.0 dev /workspaces/silo/apps/platform
+> next dev
+
+   ▲ Next.js 15.3.4
+   - Local:        http://localhost:3000
+   - Network:      http://172.18.0.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 1561ms
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 1243ms (263 modules)
+ ○ Compiling / ...
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (173kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ✓ Compiled / in 9.8s (2141 modules)
+ GET / 200 in 10313ms
+ POST / 200 in 640ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 2.7s (2136 modules)
+ GET /placeholder.svg?height=40&width=40&text=LENS+Analysis+Interface 404 in 3000ms
+ GET /placeholder.svg?height=40&width=40&text=VANTA+Lab+Interface 404 in 3021ms
+ GET /placeholder.svg?height=40&width=40&text=COMPASS+Interface 404 in 3017ms
+ GET /placeholder.svg?height=40&width=40&text=AEGIS+Shield+Interface 404 in 2527ms
+ GET / 200 in 42ms
+ ✓ Compiled in 5s (903 modules)
+ GET / 200 in 64ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 722ms (2122 modules)
+ ⨯ TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
+    at JSON.parse (<anonymous>) {
+  digest: '2211809802'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
+    at JSON.parse (<anonymous>)
+ ⨯ TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
+    at JSON.parse (<anonymous>)
+ ✓ Compiled in 1352ms (906 modules)
+ GET / 200 in 1096ms
+ ⨯ TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
+    at JSON.parse (<anonymous>) {
+  digest: '2211809802'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
+    at JSON.parse (<anonymous>)
+ ⨯ TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
+    at JSON.parse (<anonymous>) {
+  page: '/'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 4.2s (2548 modules)
+ GET /_next/static/css/app/layout.css?v=1759272166636 500 in 11358ms
+ GET / 500 in 6156ms
+ GET / 200 in 3312ms
+ ✓ Compiled in 779ms (1151 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 351ms
+ GET / 200 in 50ms
+ GET /_next/static/css/app/layout.css?v=1759272184508 404 in 63ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 107ms
+ GET /_next/static/chunks/main-app.js?v=1759272184508 404 in 113ms
+ GET /_next/static/chunks/app/page.js 404 in 31ms
+ ✓ Compiled in 1261ms (1151 modules)
+ ✓ Compiled in 1478ms (1151 modules)
+ ✓ Compiled in 518ms (1148 modules)
+ ✓ Compiled in 714ms (1148 modules)
+ ✓ Compiled in 484ms (1148 modules)
+ ✓ Compiled in 399ms (1148 modules)
+ ✓ Compiled in 1547ms (2558 modules)
+ ELIFECYCLE  Command failed.
+[?25h

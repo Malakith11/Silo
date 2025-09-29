@@ -1,0 +1,9 @@
+{
+  "extends": "@silo/config/tsconfig/react-library",
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "."
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
+}

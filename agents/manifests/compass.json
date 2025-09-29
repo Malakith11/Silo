@@ -1,0 +1,25 @@
+{
+  "name": "COMPASS Agent",
+  "purpose": "Implement discovery/trending features per COMPASS spec.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md",
+    "agents/contexts/GLOBAL_SPEC.md"
+  ],
+  "primary_context": "agents/contexts/compass/COMPASS_SPEC.md",
+  "additional_context": [
+    "agents/contexts/compass/COMPASS_MASTER.md"
+  ],
+  "tools": [
+    "filesystem",
+    "playwright"
+  ],
+  "change_checklist": [
+    "Leaderboards reflect correct metrics and privacy thresholds",
+    "Cards show evidence links (LENS) and quality (AEGIS)",
+    "Performance budget met (<1s card open)"
+  ],
+  "denylist": [
+    "Showing raw user data",
+    "Conflicting definitions of trending vs adoption"
+  ]
+}

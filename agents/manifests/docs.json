@@ -1,0 +1,28 @@
+{
+  "name": "Docs Agent",
+  "purpose": "Keep specs synchronized with anchors and traceability tables.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md",
+    "agents/contexts/GLOBAL_SPEC.md"
+  ],
+  "primary_context": "agents/contexts/SILO_PLATFORM_MASTER.md",
+  "additional_context": [
+    "agents/contexts/ui/UI_AGENT.md",
+    "agents/contexts/backend/BACKEND_AGENT.md",
+    "agents/contexts/data/DATA_AGENT.md",
+    "agents/contexts/tests/TEST_AGENT.md",
+    "agents/contexts/infra/INFRA_AGENT.md"
+  ],
+  "tools": [
+    "filesystem"
+  ],
+  "change_checklist": [
+    "Update 'Last-Updated' + changelog",
+    "Preserve anchors used by other agents",
+    "Update Spec→Code→Tests map"
+  ],
+  "denylist": [
+    "Editing product logic",
+    "Removing guardrail sections"
+  ]
+}

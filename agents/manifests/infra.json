@@ -1,0 +1,27 @@
+{
+  "name": "Infra Agent",
+  "purpose": "Manage Vercel, envs, build outputs, and observability.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md",
+    "agents/contexts/GLOBAL_SPEC.md"
+  ],
+  "primary_context": "agents/contexts/infra/INFRA_AGENT.md",
+  "additional_context": [
+    "agents/contexts/infra/deployment.md",
+    "agents/contexts/infra/observability.md"
+  ],
+  "tools": [
+    "filesystem"
+  ],
+  "change_checklist": [
+    "Document env vars in .env.example",
+    "Set correct runtime (edge/node) and caching",
+    "Ensure logs/metrics do not capture PII",
+    "Add rollback and incident notes for risky changes"
+  ],
+  "denylist": [
+    "Committing real secrets",
+    "Disabling cache globally without reason",
+    "Non-reproducible build steps"
+  ]
+}

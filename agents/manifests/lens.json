@@ -1,0 +1,24 @@
+{
+  "name": "LENS Agent",
+  "purpose": "Implement research search, scoring, and RAG summaries per LENS spec.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md",
+    "agents/contexts/GLOBAL_SPEC.md"
+  ],
+  "primary_context": "agents/contexts/lens/LENS_SPEC.md",
+  "additional_context": [
+    "agents/contexts/lens/LENS_MASTER.md"
+  ],
+  "tools": [
+    "filesystem"
+  ],
+  "change_checklist": [
+    "Always cite sources in summaries",
+    "Apply quality scoring consistently (RoB/GRADE)",
+    "No direct medical recommendations"
+  ],
+  "denylist": [
+    "Hallucinated citations",
+    "Personal data in prompts"
+  ]
+}

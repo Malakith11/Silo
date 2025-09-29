@@ -1,0 +1,20 @@
+{
+  "name": "Playwright Agent",
+  "purpose": "Use MCP Playwright to inspect the app and capture screenshots.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md"
+  ],
+  "primary_context": "agents/contexts/tests/e2e.md",
+  "tools": [
+    "playwright"
+  ],
+  "change_checklist": [
+    "Use stable selectors",
+    "Wait for network idle/visible content",
+    "Store artifacts under artifacts/e2e/"
+  ],
+  "denylist": [
+    "Modifying app code",
+    "Destructive actions in production"
+  ]
+}

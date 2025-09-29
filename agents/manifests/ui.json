@@ -1,0 +1,16 @@
+{
+  "name": "UI Agent",
+  "primary_context": "agents/contexts/UI_AGENT.md",
+  "required_globals": ["agents/contexts/GLOBALS.md"],
+  "tools": ["filesystem", "playwright"],
+  "change_checklist": [
+    "Run typecheck & lint",
+    "Add/refresh story or preview",
+    "A11y: keyboard, focus, contrast",
+    "Add/refresh unit/UI tests"
+  ],
+  "denylist": [
+    "Direct DB calls in client components",
+    "Adding new UI libraries without approval"
+  ]
+}

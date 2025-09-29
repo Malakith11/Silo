@@ -1,0 +1,25 @@
+{
+  "name": "VANTA Agent",
+  "purpose": "Implement stack builder, optimization, and safety checks per VANTA spec.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md",
+    "agents/contexts/GLOBAL_SPEC.md"
+  ],
+  "primary_context": "agents/contexts/vanta/VANTA_SPEC.md",
+  "additional_context": [
+    "agents/contexts/vanta/VANTA_MASTER.md"
+  ],
+  "tools": [
+    "filesystem",
+    "playwright"
+  ],
+  "change_checklist": [
+    "Enforce dose limits & interactions",
+    "Assistant mode by default; directive requires consent",
+    "Log rationale with citations when suggesting changes"
+  ],
+  "denylist": [
+    "Auto-applying non-safety changes",
+    "Sharing stack data without opt-in"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "AEGIS Agent",
+  "purpose": "Implement brand integrity and quality scoring features per AEGIS spec.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md",
+    "agents/contexts/GLOBAL_SPEC.md"
+  ],
+  "primary_context": "agents/contexts/aegis/AEGIS_SPEC.md",
+  "additional_context": [
+    "agents/contexts/aegis/AEGIS_MASTER.md"
+  ],
+  "tools": [
+    "filesystem",
+    "playwright"
+  ],
+  "change_checklist": [
+    "Expose recalls/flags prominently",
+    "Maintain transparent scoring with citations",
+    "Respect privacy thresholds for usage stats"
+  ],
+  "denylist": [
+    "User reviews/comments surfaces",
+    "Pay-to-improve score shortcuts"
+  ]
+}

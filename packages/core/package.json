@@ -1,0 +1,29 @@
+{
+  "name": "@silo/core",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.36.0",
+    "@silo/config": "workspace:*",
+    "@types/node": "^20",
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
+    "eslint": "^9",
+    "eslint-plugin-prettier": "^5.2.2",
+    "globals": "^15.12.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5"
+  }
+}

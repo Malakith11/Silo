@@ -1,0 +1,25 @@
+{
+  "name": "Dashboard Agent",
+  "purpose": "Implement cross-pillar user dashboard with performance budgets.",
+  "required_globals": [
+    "agents/contexts/GLOBALS.md",
+    "agents/contexts/GLOBAL_SPEC.md"
+  ],
+  "primary_context": "agents/contexts/dashboard/DASHBOARD_SPEC.md",
+  "additional_context": [
+    "agents/contexts/dashboard/DASHBOARD_MASTER.md"
+  ],
+  "tools": [
+    "filesystem",
+    "playwright"
+  ],
+  "change_checklist": [
+    "Widgets adhere to budgets",
+    "Avoid N+1 API calls; cache appropriately",
+    "Respect privacy thresholds when aggregating data"
+  ],
+  "denylist": [
+    "Surfacing PII",
+    "Unbounded client-side data fetches"
+  ]
+}

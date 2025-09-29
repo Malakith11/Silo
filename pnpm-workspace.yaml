@@ -1,8 +1,15 @@
 packages:
   - apps/*
+  - packages/*
   - supabase
 
 onlyBuiltDependencies:
-  - '@clerk/shared'
+  - "@clerk/shared"
+  - "@sentry/cli"
+  - "@tailwindcss/oxide"
+  - core-js
   - esbuild
-  - supabase
+  - msgpackr-extract
+  - sharp
+  - tesseract.js
+  - unrs-resolver
