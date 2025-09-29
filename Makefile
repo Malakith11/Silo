@@ -5,10 +5,10 @@
 up:
 	@echo "🚀 Spinning everything up…"
 	@supabase start
-	@echo "📦 Installing web dependencies…"
-	@cd apps/web && pnpm install
-	@echo "🔥 Launching Next.js…"
-	@cd apps/web && pnpm dev
+	@echo "📦 Installing workspace dependencies…"
+	@pnpm install
+	@echo "🔥 Launching landing + platform apps…"
+	@pnpm dev
 
 down:
 	@echo "🛑 Stopping Supabase…"

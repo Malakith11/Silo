@@ -1,4 +1,4 @@
-// apps/web/src/app/api/health/redis/route.ts
+// apps/platform/src/app/api/health/redis/route.ts
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 

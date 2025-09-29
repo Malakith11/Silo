@@ -1,0 +1,15 @@
+{
+  "extends": "@silo/config/tsconfig/next-app",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@silo/ui": ["../../packages/ui/src"],
+      "@silo/core": ["../../packages/core/src"]
+    }
+  }
+}
