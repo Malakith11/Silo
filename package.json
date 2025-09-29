@@ -1,6 +1,19 @@
 {
-	"dependencies": {
-		"glob": "^11.0.3",
-		"java": "^0.16.1"
-	}
+  "name": "silo",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:landing": "pnpm --filter @silo/landing dev",
+    "dev:platform": "pnpm --filter @silo/platform dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "turbo": "^2.3.3"
+  }
 }

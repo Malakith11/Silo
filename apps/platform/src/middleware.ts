@@ -1,4 +1,4 @@
-// apps/web/src/middleware.ts
+// apps/platform/src/middleware.ts
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 const isPublic = createRouteMatcher([

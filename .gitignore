@@ -13,8 +13,8 @@ node_modules/
 .next/
 .out/
 .vercel/
-apps/web/.next/
-apps/web/.vercel/
+apps/platform/.next/
+apps/platform/.vercel/
 
 # ─── Environment & debug files ──────────────────────────────────────────────────
 .env*
@@ -31,7 +31,7 @@ yarn-error.log*
 
 # ─── Giant assets ───────────────────────────────────────────────────────────────
 # ignore the entire “Background Videos” folder (space escaped)
-apps/web/public/Background\ Videos/
+apps/platform/public/Background\ Videos/
 
 # ─── Optional: Lockfiles & caches ────────────────────────────────────────────────
 pnpm-workspace.yaml

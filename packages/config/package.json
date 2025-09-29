@@ -1,0 +1,13 @@
+{
+  "name": "@silo/config",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./eslint": "./eslint/next.cjs",
+    "./prettier": "./prettier.config.cjs",
+    "./tailwind": "./tailwind/preset.cjs",
+    "./tsconfig": "./tsconfig/base.json",
+    "./tsconfig/react-library": "./tsconfig/react-library.json",
+    "./tsconfig/next-app": "./tsconfig/next-app.json"
+  }
+}
