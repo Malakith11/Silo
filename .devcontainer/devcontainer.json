@@ -1,26 +1,13 @@
 {
-  "name": "Silo_dev",
-  "build": { "dockerfile": "Dockerfile" },
-  "remoteUser": "node",
-  "workspaceFolder": "/workspaces/silo",
-  "runArgs": [
-    "--name=Silo_Dev_Container",
-    "--hostname=silo-dev",
-    "--label=devcontainer.name=Silo_Dev_Container",
-    "--label=project=silo",
-    "--add-host=host.docker.internal:host-gateway"
-  ],
-  "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-  ],
-    "containerEnv": {
-    "LANG": "C.UTF-8",
-    "LC_ALL": "C.UTF-8"
+  "name": "SILO Dev",
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
-
-  "postStartCommand": "bash -lc 'gid=$(stat -c %g /var/run/docker.sock); sudo groupadd -for -g $gid docker && sudo usermod -aG docker node'"
-  ,
-  
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/silo",
   "customizations": {
     "vscode": {
       "settings": {
@@ -34,18 +21,12 @@
       ]
     }
   },
-  
-  "postCreateCommand": "bash -lc ' \
-    (command -v corepack >/dev/null 2>&1 && corepack enable || true); \
-    if ! command -v pnpm >/dev/null 2>&1; then npm i -g pnpm; fi; \
-    pnpm install --frozen-lockfile || true; \
-    npx playwright install chrome; \
-    python3 -m pip show litellm || true; \
-    supabase --version || true \
-'",
-  "portsAttributes": {
-    "3000": { "label": "Web" },
-    "4100": { "label": "LiteLLM Proxy" }
-},
-"forwardPorts": [3000, 4100, 5432, 8000, 3001, 3002]
+  "forwardPorts": [3000, 4100, 54321, 54322, 54323, 54324, 54325, 8000, 3001, 3002],
+  "runArgs": [
+    "--name",
+    "silo-dev"
+  ],
+  "containerEnv": {
+    "COMPOSE_PROJECT_NAME": "silo"
+  }
 }
