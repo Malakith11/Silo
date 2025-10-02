@@ -12,9 +12,15 @@
     "test": "turbo test",
     "format": "prettier --write ."
   },
+  "dependencies": {
+    "openai": "^4.77.0",
+    "pip": "^0.0.1",
+    "python3": "^0.0.1"
+  },
   "devDependencies": {
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.8",
+    "tsx": "^4.20.6",
     "turbo": "^2.3.3"
   }
 }

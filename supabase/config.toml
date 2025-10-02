@@ -12,7 +12,7 @@ port = 54322
 major_version = 17
 
 [studio]
-enabled = true
+enabled = false
 port = 54323
 api_url = "http://127.0.0.1:54321"
 
@@ -57,7 +57,7 @@ enabled = true
 enabled = true
 policy = "oneshot"
 inspector_port = 9229
-deno_version = 1
+deno_version = 2
 
 [analytics]
 enabled = true

@@ -4,73 +4,84 @@
 
    ▲ Next.js 15.3.4
    - Local:        http://localhost:3000
-   - Network:      http://172.18.0.2:3000
+   - Network:      http://172.17.0.2:3000
 
  ✓ Starting...
- ✓ Ready in 1561ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+ ✓ Ready in 2.1s
  ○ Compiling /middleware ...
- ✓ Compiled /middleware in 1243ms (263 modules)
- ○ Compiling / ...
+ ✓ Compiled /middleware in 1392ms (263 modules)
 <w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (173kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
- ✓ Compiled / in 9.8s (2141 modules)
- GET / 200 in 10313ms
- POST / 200 in 640ms
+ ○ Compiling / ...
+ ✓ Compiled / in 11.6s (2141 modules)
+ GET / 200 in 12423ms
+ POST / 200 in 25ms
  ○ Compiling /_not-found ...
- ✓ Compiled /_not-found in 2.7s (2136 modules)
- GET /placeholder.svg?height=40&width=40&text=LENS+Analysis+Interface 404 in 3000ms
- GET /placeholder.svg?height=40&width=40&text=VANTA+Lab+Interface 404 in 3021ms
- GET /placeholder.svg?height=40&width=40&text=COMPASS+Interface 404 in 3017ms
- GET /placeholder.svg?height=40&width=40&text=AEGIS+Shield+Interface 404 in 2527ms
- GET / 200 in 42ms
- ✓ Compiled in 5s (903 modules)
- GET / 200 in 64ms
- ○ Compiling /_not-found ...
- ✓ Compiled /_not-found in 722ms (2122 modules)
- ⨯ TypeError: Cannot read properties of undefined (reading 'call')
-    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
-    at JSON.parse (<anonymous>) {
-  digest: '2211809802'
+ ✓ Compiled /_not-found in 2.9s (2136 modules)
+ GET /placeholder.svg?height=40&width=40&text=AEGIS+Shield+Interface 404 in 3288ms
+ GET /placeholder.svg?height=40&width=40&text=LENS+Analysis+Interface 404 in 3290ms
+ GET /placeholder.svg?height=40&width=40&text=VANTA+Lab+Interface 404 in 3293ms
+ GET /placeholder.svg?height=40&width=40&text=COMPASS+Interface 404 in 3296ms
+ GET / 200 in 36ms
+ ✓ Compiled / in 343ms (1231 modules)
+ GET / 200 in 732ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/workspaces/silo/apps/platform/.next/server/app/_not-found/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/workspaces/silo/apps/platform/.next/server/app/_not-found/page.js'
 }
-TypeError: Cannot read properties of undefined (reading 'call')
-    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
-    at JSON.parse (<anonymous>)
- ⨯ TypeError: Cannot read properties of undefined (reading 'call')
-    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
-    at JSON.parse (<anonymous>)
- ✓ Compiled in 1352ms (906 modules)
- GET / 200 in 1096ms
- ⨯ TypeError: Cannot read properties of undefined (reading 'call')
-    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
-    at JSON.parse (<anonymous>) {
-  digest: '2211809802'
-}
-TypeError: Cannot read properties of undefined (reading 'call')
-    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
-    at JSON.parse (<anonymous>)
- ⨯ TypeError: Cannot read properties of undefined (reading 'call')
-    at Object.t [as require] (.next/server/webpack-runtime.js:1:128)
-    at JSON.parse (<anonymous>) {
-  page: '/'
+ ⨯ [Error: ENOENT: no such file or directory, open '/workspaces/silo/apps/platform/.next/server/app/_not-found/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/workspaces/silo/apps/platform/.next/server/app/_not-found/page.js'
 }
  ○ Compiling /_error ...
- ✓ Compiled /_error in 4.2s (2548 modules)
- GET /_next/static/css/app/layout.css?v=1759272166636 500 in 11358ms
- GET / 500 in 6156ms
- GET / 200 in 3312ms
- ✓ Compiled in 779ms (1151 modules)
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- GET / 200 in 351ms
- GET / 200 in 50ms
- GET /_next/static/css/app/layout.css?v=1759272184508 404 in 63ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 107ms
- GET /_next/static/chunks/main-app.js?v=1759272184508 404 in 113ms
- GET /_next/static/chunks/app/page.js 404 in 31ms
- ✓ Compiled in 1261ms (1151 modules)
- ✓ Compiled in 1478ms (1151 modules)
- ✓ Compiled in 518ms (1148 modules)
- ✓ Compiled in 714ms (1148 modules)
- ✓ Compiled in 484ms (1148 modules)
- ✓ Compiled in 399ms (1148 modules)
- ✓ Compiled in 1547ms (2558 modules)
+ ✓ Compiled /_error in 7.9s (2549 modules)
+ GET /_next/static/css/app/layout.css?v=1759423850373 500 in 12373ms
+ GET /_next/static/chunks/webpack.js?v=1759423850373 500 in 11642ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 448ms
+ GET /_next/static/chunks/main-app.js?v=1759423850373 404 in 447ms
+ GET /_next/static/chunks/app/layout.js 404 in 50ms
+ GET /_next/static/chunks/app/page.js 404 in 52ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/workspaces/silo/apps/platform/.next/cache/webpack/client-development-fallback/0.pack.gz_' -> '/workspaces/silo/apps/platform/.next/cache/webpack/client-development-fallback/0.pack.gz'
+ GET / 200 in 144ms
+ GET /_next/static/css/app/layout.css?v=1759423868399 404 in 31ms
+ GET /_next/static/chunks/main-app.js?v=1759423868399 404 in 33ms
+ GET /_next/static/chunks/app/layout.js 404 in 133ms
+ GET /_next/static/chunks/app/page.js 404 in 136ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 139ms
+ GET / 200 in 31ms
+ GET /_next/static/css/app/layout.css?v=1759423871698 404 in 24ms
+ GET /_next/static/chunks/app/page.js 404 in 90ms
+ GET /_next/static/chunks/app/layout.js 404 in 78ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 96ms
+ GET /_next/static/chunks/main-app.js?v=1759423871698 404 in 80ms
+ ✓ Compiled in 2.9s (2563 modules)
+ GET / 200 in 182ms
+ GET /_next/static/css/app/layout.css?v=1759423886339 404 in 40ms
+ GET /_next/static/chunks/main-app.js?v=1759423886339 404 in 45ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 38ms
+ GET /_next/static/chunks/app/page.js 404 in 42ms
+ GET / 200 in 212ms
+ GET /_next/static/chunks/main-app.js?v=1759423891327 404 in 56ms
+ GET /_next/static/css/app/layout.css?v=1759423891327 404 in 70ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 70ms
+ GET /_next/static/chunks/app/page.js 404 in 47ms
+ GET / 200 in 34ms
+ GET /_next/static/css/app/layout.css?v=1759423918443 404 in 56ms
+ GET /_next/static/chunks/main-app.js?v=1759423918443 404 in 42ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 46ms
+ GET /_next/static/chunks/app/page.js 404 in 43ms
+ GET / 200 in 53ms
+ GET /_next/static/css/app/layout.css?v=1759424185197 404 in 67ms
+ GET /_next/static/chunks/main-app.js?v=1759424185197 404 in 51ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 114ms
+ GET /_next/static/chunks/app/page.js 404 in 115ms
  ELIFECYCLE  Command failed.
 [?25h

@@ -15,6 +15,15 @@ log_info() { printf '   • %s\n' "$*"; }
 log_warn() { printf '⚠️  %s\n' "$*"; }
 log_ok()  { printf '✅ %s\n' "$*"; }
 
+load_env() {
+  if [[ -f ".env" ]]; then
+    set -a
+    # shellcheck disable=SC1091
+    . ./.env
+    set +a
+  fi
+}
+
 ensure_apt_package() {
   local pkg="$1" bin="$2"
   if command -v "$2" >/dev/null 2>&1; then
@@ -92,6 +101,53 @@ ensure_workspace_deps() {
   pnpm install --frozen-lockfile || log_warn "pnpm install exited non-zero; inspect output above."
 }
 
+ensure_supabase_session() {
+  if ! command -v supabase >/dev/null 2>&1; then
+    log_warn "Supabase CLI missing; skipping Supabase login/link."
+    return
+  fi
+
+  local token="${SUPABASE_ACCESS_TOKEN:-}"
+  local profile="${SUPABASE_PROFILE:-supabase}"
+  if [[ -n "$token" ]]; then
+    if supabase login --token "$token" --profile "$profile" >/dev/null 2>&1; then
+      log_info "Supabase CLI login refreshed via SUPABASE_ACCESS_TOKEN."
+    else
+      log_warn "Supabase CLI login failed; verify SUPABASE_ACCESS_TOKEN."
+    fi
+  else
+    log_warn "SUPABASE_ACCESS_TOKEN not set; skipping Supabase CLI login."
+  fi
+
+  local merged_ref="${SUPABASE_PROJECT_REF:-${SUPABASE_PROJECT_ID:-}}"
+  if [[ -z "$merged_ref" && -f "supabase/.temp/project-ref" ]]; then
+    merged_ref="$(< supabase/.temp/project-ref)"
+  fi
+  if [[ -z "$merged_ref" ]]; then
+    log_warn "SUPABASE_PROJECT_REF not set; skipping Supabase CLI link."
+    return
+  fi
+
+  local current_ref=""
+  if [[ -f ".supabase/config.toml" ]]; then
+    current_ref="$(sed -n 's/^project_ref = "\(.*\)"$/\1/p' .supabase/config.toml | head -n1)"
+  fi
+  if [[ "$current_ref" == "$merged_ref" ]]; then
+    log_info "Supabase CLI already linked to project: $merged_ref"
+    return
+  fi
+
+  local link_cmd=(supabase link --project-ref "$merged_ref" --yes)
+  if [[ -n "${SUPABASE_DB_PASSWORD:-}" ]]; then
+    link_cmd+=(--password "${SUPABASE_DB_PASSWORD}")
+  fi
+  if "${link_cmd[@]}" >/dev/null 2>&1; then
+    log_ok "Supabase CLI linked to project: $merged_ref"
+  else
+    log_warn "Supabase CLI link failed for project $merged_ref; run 'supabase link --project-ref $merged_ref' manually."
+  fi
+}
+
 verify_supabase_link() {
   if ! command -v supabase >/dev/null 2>&1; then
     log_warn "Supabase CLI missing; skipping link verification."
@@ -108,11 +164,21 @@ verify_supabase_link() {
     project_ref=$(printf '%s' "$status_json" | jq -r '.project_ref // empty')
     if [[ -n "$project_ref" ]]; then
       log_ok "Supabase CLI linked to project: $project_ref"
-    else
-      log_warn "Supabase CLI link detected but project ref missing. Run 'supabase link' to relink."
+      return
     fi
+  fi
+
+  local file_ref=""
+  if [[ -f ".supabase/config.toml" ]]; then
+    file_ref="$(sed -n 's/^project_ref = "\(.*\)"$/\1/p' .supabase/config.toml | head -n1)"
+  fi
+  if [[ -z "$file_ref" && -f "supabase/.temp/project-ref" ]]; then
+    file_ref="$(< supabase/.temp/project-ref)"
+  fi
+  if [[ -n "$file_ref" ]]; then
+    log_ok "Supabase CLI linked to project: $file_ref"
   else
-    log_warn "Supabase CLI is not linked to a project. Run 'supabase link --project-ref <ref>' from the host to connect it."
+    log_warn "Supabase CLI link detected but project ref missing. Run 'supabase link' to relink."
   fi
 }
 
@@ -132,10 +198,12 @@ REMINDER
 
 main() {
   log_step "Using workspace root: $ROOT"
+  load_env
   ensure_pnpm
   ensure_apt_package netcat-openbsd nc
   ensure_playwright
   ensure_supabase_cli
+  ensure_supabase_session
   ensure_litellm
   ensure_workspace_deps
   verify_supabase_link

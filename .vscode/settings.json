@@ -23,5 +23,6 @@
   ],
   "makefile.configureOnOpen": false,
   "remote.WSL.enabled": true,
-  "remote.containers.showRebuildNotification": true
+  "remote.containers.showRebuildNotification": true,
+  "chatgpt.openOnStartup": true
 }

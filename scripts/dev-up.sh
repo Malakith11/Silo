@@ -131,20 +131,10 @@ print_header() {
 
 guide_enable_docker() {
   cat <<'EOF'
-To run Supabase locally you need Docker access from the devcontainer.
-
-1) In /.devcontainer/devcontainer.json add:
-   "mounts": [
-     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-   ]
-
-2) In /.devcontainer/Dockerfile add:
-   RUN apt-get update && apt-get install -y docker.io && rm -rf /var/lib/apt/lists/*
-
-3) Rebuild the container (VS Code → “Dev Containers: Rebuild Container”).
-
-Alternatively, run `supabase start` from a host shell outside VS Code and the
-devcontainer will connect via http://host.docker.internal.
+Supabase needs access to the host Docker daemon when running inside the devcontainer.
+Ensure Docker Desktop (or the host daemon) is running and rebuild the devcontainer if
+group membership was updated recently. If Docker access is unavailable, run `supabase start`
+from a host shell outside VS Code and the devcontainer will connect via http://host.docker.internal.
 EOF
 }
 
@@ -192,7 +182,7 @@ verify_supabase_remote() {
 
 verify_supabase_local() {
   local target_host="${SUPABASE_LOCAL_HOST:-host.docker.internal}"
-  local target_port="${SUPABASE_LOCAL_PORT:-5432}"
+  local target_port="${SUPABASE_LOCAL_PORT:-54322}"
   info "Supabase: probing local instance at ${target_host}:${target_port}..."
   if command -v nc >/dev/null 2>&1 && nc -z "$target_host" "$target_port" >/dev/null 2>&1; then
     ok "Supabase database reachable on ${target_host}:${target_port}."

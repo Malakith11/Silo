@@ -1,1 +1,26 @@
-Router config not found: litellm.config.yaml
+Starting LiteLLM on :4100 (OpenAI only) using litellm.config.yaml
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/proxy_server.py", line 77, in <module>
+    import backoff
+ModuleNotFoundError: No module named 'backoff'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vscode/.local/bin/litellm", line 8, in <module>
+    sys.exit(run_server())
+  File "/home/vscode/.local/lib/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/vscode/.local/lib/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/vscode/.local/lib/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/vscode/.local/lib/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/proxy_cli.py", line 551, in run_server
+    raise e
+  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/proxy_cli.py", line 538, in run_server
+    from .proxy_server import (
+  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/proxy_server.py", line 83, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'backoff'. Run `pip install 'litellm[proxy]'`
