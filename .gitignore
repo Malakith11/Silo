@@ -28,6 +28,10 @@ build/
 .turbo/
 .vercel/
 
+# Md Files
+repo-assessment.md
+
+
 # TypeScript
 *.tsbuildinfo
 
@@ -43,6 +47,10 @@ cypress/videos/
 *.swp
 *.swo
 .DS_Store
+
+# Development artifacts
+.dev/
+artifacts/
 
 # Misc
 Thumbs.db

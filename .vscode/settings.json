@@ -24,5 +24,8 @@
   "makefile.configureOnOpen": false,
   "remote.WSL.enabled": true,
   "remote.containers.showRebuildNotification": true,
-  "chatgpt.openOnStartup": true
+  "chatgpt.openOnStartup": true,
+  "terminal.integrated.enablePersistentSessions": true,
+  "terminal.integrated.persistentSessionReviveProcess": "onExit",
+  "terminal.integrated.tabs.restoreTerminalLayout": "preserve"
 }

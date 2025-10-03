@@ -1,26 +1,55 @@
 Starting LiteLLM on :4100 (OpenAI only) using litellm.config.yaml
+[92m18:12:24 - LiteLLM Proxy:ERROR[0m: guardrail_registry.py:176 - Error processing litellm.proxy.guardrails.guardrail_hooks.aim: unsupported operand type(s) for |: 'type' and 'NoneType'
 Traceback (most recent call last):
-  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/proxy_server.py", line 77, in <module>
-    import backoff
-ModuleNotFoundError: No module named 'backoff'
+  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/guardrails/guardrail_registry.py", line 164, in get_guardrail_class_from_hooks
+    module = importlib.import_module(module_path)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/guardrails/guardrail_hooks/aim/__init__.py", line 5, in <module>
+    from .aim import AimGuardrail
+  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/guardrails/guardrail_hooks/aim/aim.py", line 41, in <module>
+    class AimGuardrail(CustomGuardrail):
+  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/guardrails/guardrail_hooks/aim/aim.py", line 209, in AimGuardrail
+    ) -> dict | None:
+TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
+[92m18:12:24 - LiteLLM Proxy:ERROR[0m: guardrail_registry.py:107 - Error processing litellm.proxy.guardrails.guardrail_hooks.aim: unsupported operand type(s) for |: 'type' and 'NoneType'
+INFO:     Started server process [5986]
+INFO:     Waiting for application startup.
 
-During handling of the above exception, another exception occurred:
+   ██╗     ██╗████████╗███████╗██╗     ██╗     ███╗   ███╗
+   ██║     ██║╚══██╔══╝██╔════╝██║     ██║     ████╗ ████║
+   ██║     ██║   ██║   █████╗  ██║     ██║     ██╔████╔██║
+   ██║     ██║   ██║   ██╔══╝  ██║     ██║     ██║╚██╔╝██║
+   ███████╗██║   ██║   ███████╗███████╗███████╗██║ ╚═╝ ██║
+   ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝
 
-Traceback (most recent call last):
-  File "/home/vscode/.local/bin/litellm", line 8, in <module>
-    sys.exit(run_server())
-  File "/home/vscode/.local/lib/python3.9/site-packages/click/core.py", line 1161, in __call__
-    return self.main(*args, **kwargs)
-  File "/home/vscode/.local/lib/python3.9/site-packages/click/core.py", line 1082, in main
-    rv = self.invoke(ctx)
-  File "/home/vscode/.local/lib/python3.9/site-packages/click/core.py", line 1443, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/home/vscode/.local/lib/python3.9/site-packages/click/core.py", line 788, in invoke
-    return __callback(*args, **kwargs)
-  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/proxy_cli.py", line 551, in run_server
-    raise e
-  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/proxy_cli.py", line 538, in run_server
-    from .proxy_server import (
-  File "/home/vscode/.local/lib/python3.9/site-packages/litellm/proxy/proxy_server.py", line 83, in <module>
-    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
-ImportError: Missing dependency No module named 'backoff'. Run `pip install 'litellm[proxy]'`
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:4100 (Press CTRL+C to quit)
+
+[1;37m#------------------------------------------------------------#[0m
+[1;37m#                                                            #[0m
+[1;37m#         'The worst thing about this product is...'          #[0m
+[1;37m#        https://github.com/BerriAI/litellm/issues/new        #[0m
+[1;37m#                                                            #[0m
+[1;37m#------------------------------------------------------------#[0m
+
+ Thank you for using LiteLLM! - Krrish & Ishaan
+
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+
+
+[32mLiteLLM: Proxy initialized with Config, Set models:[0m
+[32m    gpt-4o[0m
+[32m    gpt-4o-mini[0m
+INFO:     127.0.0.1:48742 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48742 - "GET /swagger/swagger-ui.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48744 - "GET /swagger/swagger-ui-bundle.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48744 - "GET /openapi.json HTTP/1.1" 200 OK

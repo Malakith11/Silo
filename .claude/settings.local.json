@@ -9,7 +9,10 @@
       "Bash(npx playwright:*)",
       "mcp__playwright__browser_navigate",
       "Read(//home/vscode/**)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(awk:*)",
+      "Bash(grep:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

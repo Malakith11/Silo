@@ -10,7 +10,6 @@
       "@/*": [
         "apps/landing/src/*",
         "apps/platform/src/*",
-        "apps/web/src/*"
       ]
     }
   },

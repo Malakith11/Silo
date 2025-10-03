@@ -2,10 +2,13 @@ import path from "node:path";
 import url from "node:url";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
-import tsParser from "@typescript-eslint/parser";
 import nextPlugin from "@next/eslint-plugin-next";
 import prettierPlugin from "eslint-plugin-prettier";
 import globals from "globals";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+const tsParser = require("@typescript-eslint/parser");
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -63,7 +66,7 @@ export default [
           project: path.join(__dirname, "tsconfig.json"),
         },
         node: {
-          extensions: [".js", ".jsx", ".ts", ".tsx"],
+          extensions: [".js", ".jsx", ".ts", ".tsx", ".mjs"],
         },
       },
     },
