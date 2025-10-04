@@ -1,7 +1,7 @@
-"use client"
+/* "use client"
 
 import { SignUpButton as ClerkSignUpButton } from "@clerk/nextjs"
-import { Button } from "@/components/ui/button"
+//import { Button } from "@/components/ui/button" 
 
 interface SignUpButtonProps {
   variant?: "default" | "outline" | "ghost" | "link"
@@ -17,4 +17,4 @@ export function SignUpButton({ variant = "default", size = "default", className 
       </Button>
     </ClerkSignUpButton>
   )
-}
+} */

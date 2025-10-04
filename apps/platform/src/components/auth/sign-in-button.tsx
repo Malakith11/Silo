@@ -1,4 +1,4 @@
-"use client"
+/* "use client"
 
 import { SignInButton as ClerkSignInButton } from "@clerk/nextjs"
 import { Button } from "@/components/ui/button"
@@ -17,4 +17,4 @@ export function SignInButton({ variant = "default", size = "default", className 
       </Button>
     </ClerkSignInButton>
   )
-}
+} */

@@ -53,3 +53,7 @@ INFO:     127.0.0.1:48742 - "GET / HTTP/1.1" 200 OK
 INFO:     127.0.0.1:48742 - "GET /swagger/swagger-ui.css HTTP/1.1" 200 OK
 INFO:     127.0.0.1:48744 - "GET /swagger/swagger-ui-bundle.js HTTP/1.1" 200 OK
 INFO:     127.0.0.1:48744 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5986]

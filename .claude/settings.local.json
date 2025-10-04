@@ -12,7 +12,9 @@
       "Bash(ls:*)",
       "Bash(awk:*)",
       "Bash(grep:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_install"
     ],
     "deny": [],
     "ask": []

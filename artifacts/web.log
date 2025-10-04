@@ -7,28 +7,4 @@
    - Network:      http://172.17.0.2:3004
 
  ✓ Starting...
- ✓ Ready in 1969ms
- ○ Compiling /middleware ...
- ✓ Compiled /middleware in 1632ms (263 modules)
- ○ Compiling / ...
-<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (173kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
- ✓ Compiled / in 10.3s (2141 modules)
- GET / 200 in 10887ms
- GET / 200 in 31ms
- GET / 200 in 60ms
- GET / 200 in 52ms
- GET / 200 in 58ms
- POST / 200 in 19ms
- ○ Compiling /_not-found ...
- ✓ Compiled /_not-found in 2.1s (2136 modules)
- GET /placeholder.svg?height=40&width=40&text=LENS+Analysis+Interface 404 in 2471ms
- GET /placeholder.svg?height=40&width=40&text=VANTA+Lab+Interface 404 in 2472ms
- GET /placeholder.svg?height=40&width=40&text=COMPASS+Interface 404 in 2475ms
- GET /placeholder.svg?height=40&width=40&text=AEGIS+Shield+Interface 404 in 2473ms
- GET / 200 in 37ms
- GET / 200 in 171ms
- POST / 200 in 15ms
- GET /placeholder.svg?height=40&width=40&text=COMPASS+Interface 404 in 134ms
- GET /placeholder.svg?height=40&width=40&text=AEGIS+Shield+Interface 404 in 126ms
- GET /placeholder.svg?height=40&width=40&text=LENS+Analysis+Interface 404 in 129ms
- GET /placeholder.svg?height=40&width=40&text=VANTA+Lab+Interface 404 in 134ms
+ ✓ Ready in 1759ms

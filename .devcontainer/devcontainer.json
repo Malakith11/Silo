@@ -15,7 +15,6 @@
         "editor.formatOnSave": true
       },
       "extensions": [
-        "ms-playwright.playwright",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint"
       ]
